@@ -29,9 +29,9 @@ func _process(delta):
 	
 	# movimentar player da direita
 	var player_right_position = $PlayerRightSprite.position
-	if(Input.is_action_pressed("ui_up")):
+	if(Input.is_action_pressed("ui_up") and player_right_position.y > 0):
 		player_right_position.y += -PLAYER_SPEED * delta
-	if(Input.is_action_pressed("ui_down")):
+	if(Input.is_action_pressed("ui_down") and player_right_position.y < screen_size.y):
 		player_right_position.y += PLAYER_SPEED * delta
 	$PlayerRightSprite.position = player_right_position
 	
