@@ -1,5 +1,6 @@
 extends Node2D
 const BALL_SPEED = 150
+const PLAYER_SPEED = 80
 
 var screen_size
 var ball_speed = BALL_SPEED
@@ -20,9 +21,16 @@ func _process(delta):
 	if(ball_position.y < 0 or ball_position.y > screen_size.y):
 		ball_direction.y = -ball_direction.y
 
+	# Se a bola tocar na esq ou dir acaba a partida
 	if(ball_position.x < 0 or ball_position.x > screen_size.x):
 		ball_position = screen_size * 0.5
 		ball_direction = Vector2(randf()*2.0-1,0).normalized()
 		ball_speed = BALL_SPEED
+	
+	# movimentar player da direita
+	var player_right_position = $PlayerRightSprite.position
+	if(Input.is_action_pressed("ui_up")):
+		player_right_position.y += -PLAYER_SPEED * delta
+	$PlayerRightSprite.position = player_right_position
 	
 	$BallSprite.position = ball_position
