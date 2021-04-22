@@ -11,7 +11,9 @@ script = ExtResource( 2 )
 texture = ExtResource( 1 )
 
 [node name="PlayerLeftSprite" type="Sprite" parent="."]
+position = Vector2( 24, 300 )
 texture = ExtResource( 3 )
 
 [node name="PlayerRightSprite" type="Sprite" parent="."]
+position = Vector2( 776, 300 )
 texture = ExtResource( 3 )
