@@ -22,5 +22,6 @@ func _process(delta):
 
 	if(ball_position.x < 0 or ball_position.x > screen_size.x):
 		ball_position = screen_size * 0.5
+		ball_direction = Vector2(randf()*2.0-1,0).normalized()
 	
 	$BallSprite.position = ball_position
