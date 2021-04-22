@@ -9,7 +9,7 @@ var ball_position
 func _ready():
 	screen_size = get_viewport_rect().size
 	$BallSprite.position = screen_size*0.5
-	ball_direction = Vector2(0,-1)
+	ball_direction = Vector2(-1,0)
 	ball_position = $BallSprite.position
 
 func _process(delta):
@@ -20,4 +20,7 @@ func _process(delta):
 	if(ball_position.y < 0 or ball_position.y > screen_size.y):
 		ball_direction.y = -ball_direction.y
 
+	if(ball_position.x < 0 or ball_position.x > screen_size.x):
+		ball_position = screen_size * 0.5
+	
 	$BallSprite.position = ball_position
