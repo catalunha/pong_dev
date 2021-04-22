@@ -34,5 +34,14 @@ func _process(delta):
 	if(Input.is_action_pressed("ui_down") and player_right_position.y < screen_size.y):
 		player_right_position.y += PLAYER_SPEED * delta
 	$PlayerRightSprite.position = player_right_position
+
+	# movimentar player da esquerda
+	var player_left_position = $PlayerLeftSprite.position
+	if(Input.is_action_pressed("ui_w") and player_left_position.y > 0):
+		player_left_position.y += -PLAYER_SPEED * delta
+	if(Input.is_action_pressed("ui_s") and player_left_position.y < screen_size.y):
+		player_left_position.y += PLAYER_SPEED * delta
+	$PlayerLeftSprite.position = player_left_position
+
 	
 	$BallSprite.position = ball_position
