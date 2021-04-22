@@ -31,6 +31,8 @@ func _process(delta):
 	var player_right_position = $PlayerRightSprite.position
 	if(Input.is_action_pressed("ui_up")):
 		player_right_position.y += -PLAYER_SPEED * delta
+	if(Input.is_action_pressed("ui_down")):
+		player_right_position.y += PLAYER_SPEED * delta
 	$PlayerRightSprite.position = player_right_position
 	
 	$BallSprite.position = ball_position
