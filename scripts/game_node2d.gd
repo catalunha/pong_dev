@@ -50,7 +50,9 @@ func _process(delta):
 	var player_right_rect2 = Rect2($PlayerRightSprite.position-player_size*0.5,player_size)
 	var player_left_rect2 = Rect2($PlayerLeftSprite.position-player_size/2,player_size)
 	if (player_right_rect2.has_point(ball_position) or player_left_rect2.has_point(ball_position)):
-		ball_direction.x = -ball_direction.x
 		ball_speed *= 1.1
+		ball_direction.x *= -1
+		ball_direction.y = randf()*2.0-1
+		ball_direction = ball_direction.normalized()
 
 	$BallSprite.position = ball_position
