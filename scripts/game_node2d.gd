@@ -47,7 +47,12 @@ func _process(delta):
 	$PlayerLeftSprite.position = player_left_position
 
 	# Criando um retangulo envolta dos players
+<<<<<<< HEAD
 	var player_right_rect2 = Rect2($PlayerLeftSprite.position-player_size*0.5,player_size)
 	var player_left_rect2 = Rect2($PlayerLeftSprite.position-player_size/2,player_size)
 	
+=======
+	var player_right_rect2 = Rect2(player_right_position-player_size*0.5,player_size)
+	var player_left_rect2 = Rect2(player_left_position-player_size/2,player_size)
+>>>>>>> d31f3a8b7e82fa84cec5ff33c0b9d2b624e80563
 	$BallSprite.position = ball_position
