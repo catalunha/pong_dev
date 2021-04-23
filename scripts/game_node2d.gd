@@ -7,11 +7,14 @@ var ball_speed = BALL_SPEED
 var ball_direction
 var ball_position
 
+var player_size
+
 func _ready():
 	screen_size = get_viewport_rect().size
 	$BallSprite.position = screen_size*0.5
 	ball_direction = Vector2(-1,0)
 	ball_position = $BallSprite.position
+	player_size = $PlayerLeftSprite.get_texture().get_size()
 
 func _process(delta):
 	# A bola inicia seu movimento na direção definida no _ready()
@@ -43,5 +46,7 @@ func _process(delta):
 		player_left_position.y += PLAYER_SPEED * delta
 	$PlayerLeftSprite.position = player_left_position
 
-	
+	# Criando um retangulo envolta dos players
+	var player_right_rect2 = Rect2(player_right_position-player_size*0.5,player_size)
+	var player_left_rect2 = Rect2(player_left_position-player_size/2,player_size)
 	$BallSprite.position = ball_position
