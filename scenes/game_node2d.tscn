@@ -17,3 +17,29 @@ texture = ExtResource( 3 )
 [node name="PlayerRightSprite" type="Sprite" parent="."]
 position = Vector2( 776, 300 )
 texture = ExtResource( 3 )
+
+[node name="UHDNode" type="Node" parent="."]
+
+[node name="PlayerLeftGoalLabel" type="Label" parent="UHDNode"]
+margin_right = 40.0
+margin_bottom = 14.0
+text = "1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="XLabel" type="Label" parent="UHDNode"]
+margin_right = 40.0
+margin_bottom = 14.0
+text = "x"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerRightGoalLabel" type="Label" parent="UHDNode"]
+margin_right = 40.0
+margin_bottom = 14.0
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
