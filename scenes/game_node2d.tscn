@@ -80,3 +80,13 @@ align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="AutorLabel" type="Label" parent="UHDNode"]
+margin_left = 594.0
+margin_top = 6.0
+margin_right = 793.0
+margin_bottom = 20.0
+text = "Feito pelo [meu filho], em 2021."
+__meta__ = {
+"_edit_use_anchors_": false
+}
