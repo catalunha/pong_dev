@@ -9,6 +9,9 @@ var ball_position
 
 var player_size
 
+var player_left_goal = 0
+var player_right_goal = 0
+
 func _ready():
 	screen_size = get_viewport_rect().size
 	$BallSprite.position = screen_size*0.5
@@ -26,6 +29,12 @@ func _process(delta):
 
 	# Se a bola tocar na esq ou dir acaba a partida
 	if(ball_position.x < 0 or ball_position.x > screen_size.x):
+		if ball_position.x < 0 :
+			player_right_goal += 1
+			$UHDNode/PlayerRightGoalLabel.text = str(player_right_goal)
+		if ball_position.x > screen_size.x :
+			player_left_goal += 1
+			$UHDNode/PlayerLeftGoalLabel.text = str(player_left_goal)
 		ball_position = screen_size * 0.5
 		ball_direction = Vector2(randf()*2.0-1,0).normalized()
 		ball_speed = BALL_SPEED
